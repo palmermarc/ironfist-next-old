@@ -34,6 +34,7 @@ export default function Sidebar(props: { isShow: boolean; isShowMd: boolean }) {
     >
       <div className="sidebar-brand d-none d-md-flex align-items-center justify-content-center">
         <Image
+          priority
           className="sidebar-brand-full"
           src="/assets/brand/logo.svg"
           alt="IRONFIST Gaming"

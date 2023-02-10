@@ -17,6 +17,7 @@ function MyApp({ Component, pageProps }: AppProps) {
   // In server-side rendered applications, a SSRProvider must wrap the application in order
   // to ensure that the auto-generated ids are consistent between the server and client.
   // https://react-bootstrap.github.io/getting-started/server-side-rendering/
+
   return (
     <SSRProvider>
       <ProgressBar />

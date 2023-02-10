@@ -538,7 +538,6 @@ const Home: NextPage = () => (
         </div>
       </Card.Footer>
     </Card>
-
   </AdminLayout>
 )
 
