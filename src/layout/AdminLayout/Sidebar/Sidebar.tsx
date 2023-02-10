@@ -1,10 +1,10 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import {faAngleLeft, faBars} from '@fortawesome/free-solid-svg-icons'
+import { faAngleLeft } from '@fortawesome/free-solid-svg-icons'
 import React, { useEffect, useState } from 'react'
 import classNames from 'classnames'
 import { Button } from 'react-bootstrap'
+import Image from 'next/image'
 import SidebarNav from './SidebarNav'
-import Image from "next/image";
 
 export default function Sidebar(props: { isShow: boolean; isShowMd: boolean }) {
   const { isShow, isShowMd } = props
@@ -34,11 +34,11 @@ export default function Sidebar(props: { isShow: boolean; isShowMd: boolean }) {
     >
       <div className="sidebar-brand d-none d-md-flex align-items-center justify-content-center">
         <Image
-            className="sidebar-brand-full"
-            src="/assets/brand/logo.svg"
-            alt="IRONFIST Gaming"
-            width="118"
-            height="125"
+          className="sidebar-brand-full"
+          src="/assets/brand/logo.svg"
+          alt="IRONFIST Gaming"
+          width="118"
+          height="125"
         />
       </div>
 

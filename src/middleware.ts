@@ -2,7 +2,6 @@ import type { NextRequest } from 'next/server'
 import { NextResponse } from 'next/server'
 
 type Middleware = (request: NextRequest) => NextResponse
-
 const redirectIfAuthenticated: Middleware = (request) => {
   const authSession = request.cookies.get('auth')?.value
 
@@ -15,7 +14,7 @@ const redirectIfAuthenticated: Middleware = (request) => {
 
 const authenticated: Middleware = (request) => {
   const authSession = request.cookies.get('auth')?.value
-  /**
+
   if (!authSession) {
     const response = NextResponse.redirect(new URL('/login', request.url))
     response.cookies.set({
@@ -24,7 +23,7 @@ const authenticated: Middleware = (request) => {
     })
     return response
   }
-  **/
+
   return NextResponse.next()
 }
 
@@ -37,7 +36,6 @@ export default function middleware(request: NextRequest) {
   }
 
   if ([
-    '/',
     '/pokemons',
     '/pokemons/client',
   ].includes(request.nextUrl.pathname)) {

@@ -18,12 +18,6 @@ export default function AdminLayout({ children }: PropsWithChildren) {
     setIsShowSidebar(!isShowSidebar)
   }
 
-  const toggleIsShowSidebarMd = () => {
-    const newValue = !isShowSidebarMd
-    localStorage.setItem('isShowSidebarMd', newValue ? 'true' : 'false')
-    setIsShowSidebarMd(newValue)
-  }
-
   // Clear and reset sidebar
   const resetIsShowSidebar = () => {
     setIsShowSidebar(false)
