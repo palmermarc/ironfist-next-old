@@ -2,7 +2,7 @@ import { Dropdown, Table } from 'react-bootstrap'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faEllipsisVertical } from '@fortawesome/free-solid-svg-icons'
 import React from 'react'
-import { Pokemon } from '@models/pokemon'
+import { Member } from '@models/member'
 import { THSort } from '@components/TableSort'
 import Image from 'next/image'
 
@@ -48,11 +48,11 @@ const TypeLabel = ({ type }: TypeLabelProps) => (
 )
 
 type Props = {
-  pokemons: Pokemon[];
+  members: Member[];
 } & Pick<Parameters<typeof THSort>[0], 'setSort' | 'setOrder'>
 
-export default function PokemonList(props: Props) {
-  const { pokemons, setSort, setOrder } = props
+export default function MemberList(props: Props) {
+  const { members, setSort, setOrder } = props
 
   return (
     <Table responsive bordered hover>
@@ -74,38 +74,38 @@ export default function PokemonList(props: Props) {
         </tr>
       </thead>
       <tbody>
-        {pokemons.map((pokemon) => (
-          <tr key={pokemon.id}>
-            <td>{pokemon.id}</td>
+        {members.map((member) => (
+          <tr key={member.id}>
+            <td>{member.id}</td>
             <td>
               <div className="position-relative mx-auto" style={{ width: '70px', height: '70px' }}>
                 <Image
                   fill
                   style={{ objectFit: 'contain' }}
-                  alt={pokemon.identifier}
-                  src={`https://img.pokemondb.net/sprites/sword-shield/icon/${pokemon.identifier}.png`}
+                  alt={member.identifier}
+                  src={`https://img.memberdb.net/sprites/sword-shield/icon/${member.identifier}.png`}
                 />
               </div>
             </td>
-            <td>{pokemon.name}</td>
+            <td>{member.name}</td>
             <td>
-              {pokemon.types.map((type) => <TypeLabel key={type} type={type} />)}
+              {member.types.map((type) => <TypeLabel key={type} type={type} />)}
             </td>
-            <td className="text-center" style={{ whiteSpace: 'pre' }}>{pokemon.egg_groups.join('\n')}</td>
-            <td className="text-end">{pokemon.hp}</td>
-            <td className="text-end">{pokemon.attack}</td>
-            <td className="text-end">{pokemon.defense}</td>
-            <td className="text-end">{pokemon.special_attack}</td>
-            <td className="text-end">{pokemon.special_defense}</td>
-            <td className="text-end">{pokemon.speed}</td>
-            <td className="text-end">{pokemon.total}</td>
+            <td className="text-center" style={{ whiteSpace: 'pre' }}>{member.egg_groups.join('\n')}</td>
+            <td className="text-end">{member.hp}</td>
+            <td className="text-end">{member.attack}</td>
+            <td className="text-end">{member.defense}</td>
+            <td className="text-end">{member.special_attack}</td>
+            <td className="text-end">{member.special_defense}</td>
+            <td className="text-end">{member.speed}</td>
+            <td className="text-end">{member.total}</td>
             <td>
               <Dropdown align="end">
                 <Dropdown.Toggle
                   as="button"
                   bsPrefix="btn"
                   className="btn-link rounded-0 text-black-50 shadow-none p-0"
-                  id={`action-${pokemon.id}`}
+                  id={`action-${member.id}`}
                 >
                   <FontAwesomeIcon fixedWidth icon={faEllipsisVertical} />
                 </Dropdown.Toggle>

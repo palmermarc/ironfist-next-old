@@ -1,6 +1,6 @@
 import { GetServerSideProps, NextPage } from 'next'
 import { Card } from 'react-bootstrap'
-import { PokemonList } from '@components/Pokemon'
+import { PokemonList } from '@components/Member'
 import { AdminLayout } from '@layout'
 import React, { useEffect, useState } from 'react'
 import { Pokemon } from '@models/pokemon'

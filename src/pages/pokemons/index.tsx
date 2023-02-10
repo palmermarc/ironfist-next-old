@@ -6,7 +6,7 @@ import { Pokemon } from '@models/pokemon'
 import { newResource, Resource } from '@models/resource'
 import React from 'react'
 import { Pagination } from '@components/Pagination'
-import { PokemonList } from '@components/Pokemon'
+import { PokemonList } from '@components/Member'
 import { transformResponseWrapper, useSWRAxios } from '@hooks'
 
 type Props = {
