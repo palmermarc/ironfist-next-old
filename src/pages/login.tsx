@@ -38,8 +38,11 @@ const Login: NextPage = () => {
     setSubmitting(false)
   }
 
+  const rand = Math.floor(1 + (Math.random() * 4))
+  const background = `login-background-${rand}`
+
   return (
-    <div className="bg-light min-vh-100 d-flex flex-row align-items-center dark:bg-transparent">
+    <div id={background} className="bg-light min-vh-100 d-flex flex-row align-items-center dark:bg-transparent login-bg-{background}">
       <Container>
         <Row className="justify-content-center align-items-center px-3">
           <Col lg={8}>
@@ -47,7 +50,7 @@ const Login: NextPage = () => {
               <Col md={7} className="bg-white border p-5">
                 <div className="">
                   <h1>Login</h1>
-                  <p className="text-black-50">Sign In to your account</p>
+                  <p className="text-black-50">Login data is sent to Battle.net only. No data is stored on the server.</p>
 
                   <form onSubmit={login}>
                     <InputGroup className="mb-3">
@@ -86,14 +89,8 @@ const Login: NextPage = () => {
                     </InputGroup>
 
                     <Row>
-                      <Col xs={6}>
-                        <Button className="px-4" variant="primary" type="submit" disabled={submitting}>Login</Button>
-                      </Col>
-                      <Col xs={6} className="text-end">
-                        <Button className="px-0" variant="link" type="submit">
-                          Forgot
-                          password?
-                        </Button>
+                      <Col className="text-center">
+                        <Button className="px-4" variant="primary" type="submit" disabled={submitting}>Import Battle.net Profile</Button>
                       </Col>
                     </Row>
                   </form>
@@ -104,14 +101,12 @@ const Login: NextPage = () => {
                 className="bg-primary text-white d-flex align-items-center justify-content-center p-5"
               >
                 <div className="text-center">
-                  <h2>Sign up</h2>
                   <p>
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                    tempor incididunt ut labore et dolore magna aliqua.
+                    I don&apos;t care about my own profile, just give me the guild info
                   </p>
                   <Link href="/register">
                     <button className="btn btn-lg btn-outline-light mt-3" type="button">
-                      Register Now!
+                      Load Guild Info
                     </button>
                   </Link>
                 </div>
